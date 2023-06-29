@@ -1,0 +1,25 @@
+localhost:80 {
+	root * ../html
+	file_server
+
+	handle_path /api/school/* {
+		reverse_proxy localhost:4416
+	}
+
+	handle_path /api/class/* {
+		reverse_proxy localhost:5525
+	}
+
+	handle_path /api/teacher/* {
+		reverse_proxy localhost:6636
+	}
+
+	handle_path /api/student/* {
+		reverse_proxy localhost:7749
+	}
+
+	handle_errors {
+		rewrite * /status_code/{http.error.status_code}.html
+		file_server
+	}
+}

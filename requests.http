@@ -1,0 +1,16 @@
+@uri = http://localhost
+
+### 4416 Health
+GET {{uri}}/api/school/health HTTP/1.1
+
+### 4416 Hello
+GET {{uri}}/api/school/hello HTTP/1.1
+
+### 5525 Hello
+GET {{uri}}/api/class/hello HTTP/1.1
+
+### 6636 Hello
+GET {{uri}}/api/teacher/hello HTTP/1.1
+
+### 7749 Hello
+GET {{uri}}/api/student/hello HTTP/1.1
