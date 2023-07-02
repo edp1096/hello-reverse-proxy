@@ -2,6 +2,10 @@ localhost:80 {
 	root * ../html
 	file_server
 
+	handle_path /health {
+		respond "OK"
+	}
+
 	handle_path /api/school/* {
 		reverse_proxy localhost:4416
 	}
